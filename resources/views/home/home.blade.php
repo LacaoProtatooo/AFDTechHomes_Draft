@@ -31,7 +31,7 @@
 
             <!--GET STARTED / LOGIN/REGISTER BUTTON-->
         <div class="flex md:order-2">
-            <button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">GET STARTED</button>
+            <button type="button" onclick="location.href='http://127.0.0.1:8000/login';" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">GET STARTED</button>
         </div>
 
           <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
