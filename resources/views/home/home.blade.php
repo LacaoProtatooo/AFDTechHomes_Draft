@@ -31,7 +31,18 @@
 
             <!--GET STARTED / LOGIN/REGISTER BUTTON-->
         <div class="flex md:order-2">
-            <button type="button" onclick="location.href='http://127.0.0.1:8000/login';" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">GET STARTED</button>
+            <button type="button" onclick="location.href='http://127.0.0.1:8000/login';" class="flex items-center justify-center text-white bg-gradient-to-br from-green-400 to-blue-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                GET STARTED
+            </button>
+
+            {{-- <button type="button" onclick="location.href='http://127.0.0.1:8000/login';" class="flex items-center justify-center text-white bg-gradient-to-br from-green-400 to-blue-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+               LAGAY USER NAME DITO
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4H1m3 4H1m3 4H1m3 4H1m6.071.286a3.429 3.429 0 1 1 6.858 0M4 1h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Zm9 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"/>
+                </svg>
+            </button> --}}
+            
+            
         </div>
 
           <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
@@ -46,16 +57,18 @@
             
             <!--BUTTONS-->
             <!--Home-->
-            <button type="button" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Home</button>
+            <button type="button" onclick="location.href='http://127.0.0.1:8000/home';" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Home</button>
             <!--List-->
-            <button type="button" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">List</button>
+            <button type="button" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">List</button>
             <!--Services-->
-            <button type="button" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Services</button>    
+            <button type="button" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Services</button>    
             <!--Projects-->
-            <button type="button" class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Projects</button>
+            <button type="button" class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:px-6 hover:py-3.5 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Projects</button>
           </div>
         </div>
       </nav>
+
+      
 
     <!--NAVBAR-->
     <nav class="bg-white border-gray-200 dark:bg-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700">
@@ -84,7 +97,7 @@
                 <option value="4A">REGION 4A</option>
             </select>
 
-            <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-0 flex justify-end">Search</button>
+            <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:px-6 hover:py-3.5 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-0 flex justify-end">Search</button>
 
         </div>
     </nav>
@@ -94,13 +107,13 @@
 
  
     <!--CARDS -->
-    <a href="#" class="flex flex-col items-center mr-4 mb-4 ml-4 bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800 hover:bg-gradient-to-br from-teal-200 via-yellow-100 to-lime-300 hover:red-200 hover:red-300 hover:yellow-200 dark:text-white dark:hover:text-gray-900 ">
+    <a href="http://127.0.0.1:8000/property-info" class="flex flex-col items-center mr-4 mb-4 ml-4 h-50 bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800 hover:bg-gradient-to-br from-teal-200 via-yellow-100 to-lime-300 hover:red-200 hover:red-300 hover:yellow-200 dark:text-white dark:hover:text-gray-900 ">
         <img class="object-cover w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-s-lg" src="https://drive.google.com/thumbnail?id=11-hCFhCAX0TXEZSL3d6ZmjFl9Xh_pcJP" alt="">
         <div class="flex flex-col justify-between p-4 leading-normal">
             <!--TITLE-->
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Nigga Nae Nae</h5>
             <!--DESCRIPTION-->
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">qwerty uiop asd fgh jkl zxczxc vbnvbn mmmmm </p>
         </div>
     </a>
 
@@ -134,7 +147,7 @@
             </ul>
         </div>
         <hr class="my-6 border-yellow-100 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <span class="block text-sm text-yellow-100 sm:text-center dark:text-gray-400">© 2024 <a href="http://127.0.0.1:8000/home" class="hover:underline">Flowbite™</a>. All Rights Reserved. Material may not be published or reproduced in any form without prior written permission.</span>
+        <span class="block text-sm text-yellow-100 sm:text-center dark:text-gray-400">© 2024 <a href="http://127.0.0.1:8000/home" class="hover:underline">AffordiTech Homes™</a>. All Rights Reserved. Material may not be published or reproduced in any form without prior written permission.</span>
     </div>
 </footer>
 

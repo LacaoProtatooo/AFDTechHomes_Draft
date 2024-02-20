@@ -34,4 +34,5 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home.index');
 Route::get('/login', [AuthController::class, 'login'])->name('login.login'); 
 Route::get('/signup', [AuthController::class, 'signup'])->name('login.signup');
+Route::get('/property-info', [HomeController::class, 'pinfo'])->name('home.propertyinfo');
 
