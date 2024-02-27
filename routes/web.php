@@ -3,8 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 // Classes
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\AgentController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PropertyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +21,7 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.home');
 });
 
 /*  Routing FORMAT
@@ -29,10 +32,28 @@ Route::get('/', function () {
 
     ->name(<module>.<action>);
     naming convention used to identify routes and corresponding controllers and actions
+
+    @ - Seperator between controller name and method name
 */
 
-Route::get('/home', [HomeController::class, 'index'])->name('home.index');
-Route::get('/login', [AuthController::class, 'login'])->name('login.login'); 
-Route::get('/signup', [AuthController::class, 'signup'])->name('login.signup');
-Route::get('/property-info', [HomeController::class, 'pinfo'])->name('home.propertyinfo');
+// LOGIN & LOGOUT
+Route::get('/login', [LoginController::class, 'loginpage'])->name('login.loginpage');
+Route::post('/home', [LoginController::class, 'login'])->name('login.submit');
+Route::match(['get', 'post'], '/logout', [LoginController::class, 'logout'])->name('logout');
+
+// SIGNUP
+Route::get('/register/{role}', [LoginController::class, 'signup'])->name('signup.show');
+Route::post('/register/{role}', [LoginController::class, 'signupuser'])->name('signup.submit');
+
+Route::get('/agents', [AgentController::class, 'index'])->name('agent.home');
+Route::get('/customer', [CustomerController::class, 'index'])->name('customer.home');
+
+// Customer
+Route::get('/customer/dashboard', [CustomerController::class, 'index'])->name('customer.dashboard');
+
+// Agent
+Route::get('/agent/dashboard', [AgentController::class, 'index'])->name('agent.dashboard');
+
+
+// Route::get('/property-info', [HomeController::class, 'pinfo'])->name('home.propertyinfo');
 
