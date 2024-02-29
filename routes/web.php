@@ -20,10 +20,6 @@ use App\Http\Controllers\PropertyController;
 |
 */
 
-Route::get('/', function () {
-    return view('home.home');
-});
-
 /*  Routing FORMAT
 
     get Request from /home 
@@ -35,6 +31,9 @@ Route::get('/', function () {
 
     @ - Seperator between controller name and method name
 */
+
+// Homepopulate
+Route::get('/', [PropertyController::class, 'homepopulate'])->name('home');
 
 // LOGIN & LOGOUT
 Route::get('/login', [LoginController::class, 'loginpage'])->name('login.loginpage');
@@ -48,12 +47,21 @@ Route::post('/register/{role}', [LoginController::class, 'signupuser'])->name('s
 Route::get('/agents', [AgentController::class, 'index'])->name('agent.home');
 Route::get('/customer', [CustomerController::class, 'index'])->name('customer.home');
 
+// Admin
+Route::get('/admin/dashboard', [Admincontroller::class, 'index'])->name('admin.dashboard');
+
 // Customer
 Route::get('/customer/dashboard', [CustomerController::class, 'index'])->name('customer.dashboard');
 
 // Agent
 Route::get('/agent/dashboard', [AgentController::class, 'index'])->name('agent.dashboard');
 
+// Property
+Route::get('/property/create', [PropertyController::class, 'create'])->name('property.create');
+Route::post('/property/store', [PropertyController::class, 'store'])->name('property.store');
+Route::get('/property/{id}/edit', [PropertyController::class, 'edit'])->name('property.edit');
+Route::post('/property/{id}/update', [PropertyController::class, 'update'])->name('property.update');
+Route::get('/property/{id}/delete', [PropertyController::class, 'delete'])->name('property.delete');
 
-// Route::get('/property-info', [HomeController::class, 'pinfo'])->name('home.propertyinfo');
+Route::get('/property/info', [PropertyController::class, 'propertyinfo'])->name('property.info');
 

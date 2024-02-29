@@ -5,11 +5,13 @@
         <div class="sm:flex sm:items-center sm:justify-between">
             <a 
             @if (isset($customerinfo) && $customerinfo)
-                href="http://127.0.0.1:8000/customer/dashboard" 
+                href="{{route('customer.dashboard')}}" 
             @elseif (isset($agentinfo) && $agentinfo)
-                href="http://127.0.0.1:8000/agent/dashboard" 
+                href="{{route('agent.dashboard')}}" 
+            @elseif (isset($admininfo) && $admininfo)
+                href="{{route('admin.dashboard')}}" 
             @else
-                href="http://127.0.0.1:8000/" 
+                href="{{route('home')}}" 
             @endif
             
             class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
@@ -34,11 +36,13 @@
         <hr class="my-6 border-yellow-100 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <span class="block text-sm text-yellow-100 sm:text-center dark:text-gray-400">© 2024 <a 
             @if (isset($customerinfo) && $customerinfo)
-                href="http://127.0.0.1:8000/customer/dashboard" 
+                href="{{route('customer.dashboard')}}" 
             @elseif (isset($agentinfo) && $agentinfo)
-                href="http://127.0.0.1:8000/agent/dashboard" 
+                href="{{route('agent.dashboard')}}" 
+            @elseif (isset($admininfo) && $admininfo)
+                href="{{route('admin.dashboard')}}" 
             @else
-                href="http://127.0.0.1:8000/" 
+                href="{{route('home')}}" 
             @endif
             class="hover:underline">AffordiTech Homes™</a>. All Rights Reserved. Material may not be published or reproduced in any form without prior written permission.</span>
     </div>

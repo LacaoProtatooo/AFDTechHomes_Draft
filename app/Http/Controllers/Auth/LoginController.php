@@ -9,6 +9,7 @@ use App\Models\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use Illuminate\Http\Request;
 
@@ -30,6 +31,9 @@ class LoginController extends Controller
 
         } elseif ($role === 'agent') {
             return app(AgentController::class)->register($request);
+
+        }elseif ($role === 'admin') {
+            return app(AdminController::class)->register($request);
 
         } else {
             dd('error');
@@ -73,10 +77,12 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
+
+        $customerinfo = NULL;
+        $agentinfo = NULL;
+        $admininfo = NULL;
 
         return redirect()->route('login.loginpage');
     }

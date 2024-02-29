@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->unsignedBigInteger('agent_id');
-            $table->decimal('price');
+            $table->decimal('price', 12, 2);
             $table->string('address');
             $table->string('property_type');
             $table->string('description');
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('cr');
             $table->string('parking');
             $table->string('status');
-            $table->string('image_path')->nullable();
+            $table->longText('image_path')->nullable();
             $table->timestamps(); 
 
             // FK
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Property');
+        Schema::dropIfExists('properties');
     }
 };

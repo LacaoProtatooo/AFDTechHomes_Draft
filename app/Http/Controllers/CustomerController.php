@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
-
 class CustomerController extends Controller
 {
     public function index()
@@ -55,7 +54,7 @@ class CustomerController extends Controller
         $customer->save();
         auth()->login($user);
 
-        return redirect()->route('login.loginpage')->with('Success', 'Registration successful! Please log in.');
+        return redirect()->route('login.loginpage')->with('successregister', true);
     }
     
 }

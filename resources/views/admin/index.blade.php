@@ -8,11 +8,14 @@
 
     <title>Admin</title>
 </head>
-<body>
+<body class="bg-green-200 ">
+    @include('common.header')
+    @csrf
+
     <h1> ADMIN DASHBOARD </h1>
 
 
 
-    {{-- @include('common.footer') --}}
+    @include('common.footer')
 </body>
 </html>

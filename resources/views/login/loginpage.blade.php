@@ -10,11 +10,12 @@
 
     <title>Login</title>
 </head>
-<body>
+<body class="bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+    <br><br>
     <section class="bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-            <a href="http://127.0.0.1:8000/" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white hover:text-white ">
-                <img class="w-32 h-32 mr-2 bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-1 py-1 text-center me-2 mb-0" src="https://drive.google.com/thumbnail?id=18nYHVsFygIeBpHPCeNBLjCiESNhiR3oe" alt="logo">
+            <a href="{{route('home')}}" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white hover:text-white ">
+                <img class="w-32 h-32 mr-2 bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-1 py-1 text-center me-2 mb-0" src="{{ asset('storage/Logo_BG_Removed.png')}} " alt="logo">
                 AfforfiTech Homes    
             </a>
             <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -45,8 +46,8 @@
                             <a href="{{ route('signup.show', ['role' => 'customer']) }}" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up as a Customer</a>
                             <br>
                             <a href="{{ route('signup.show', ['role' => 'agent']) }}" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up as a Agent</a>
-                            {{-- <a href="{{ route('register.show', ['role' => 'admin']) }}" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up as a Admin</a> --}}
-                            {{-- <a href="http://127.0.0.1:8000/signup" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a> --}}
+                            <br>
+                            <a href="{{ route('signup.show', ['role' => 'admin']) }}" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up as a Admin</a>
                         </p>
                     </form>
                 </div>
@@ -54,7 +55,15 @@
         </div>
 
       </section>
+      <br>
+      <br>
 
+      <script>
+        @if(session('successregister'))
+            var successMessage = "Registered Successfully. Please Login";
+            alert(successMessage); // Displaying the success message using JavaScript alert
+        @endif
+      </script>
 
 </body>
 </html>

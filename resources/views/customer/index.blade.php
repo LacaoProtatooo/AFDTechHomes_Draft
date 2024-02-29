@@ -8,64 +8,18 @@
 
     <title>AffordiTech</title>
 </head>
-<body>
+<body class="bg-green-200 ">
     @include('common.header')
 
     @if ($customerinfo)
-    <h1> Welcome {{ $customerinfo->name }}</h1>
-
+    {{-- <h1>Welcome {{ $customerinfo->name }}</h1> --}}
     @else
         <h1>No customer information available</h1>
     @endif
 
-    @foreach ($properties as $property)
-    <p>{{ $property->name }}</p>
-    <!-- Display other property information -->
-    @endforeach
-
-{{--     
-    <a href="{{ route('property.create') }}">Create Property</a>
-    <br>
-    <a href="{{ route('logout') }}">Logout</a>
-
-    <h2>Properties</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>image_path</th>
-                <th>Address</th>
-                <th>Price</th>
-                <th>Description</th>
-                <th>Rooms</th>
-                <th>Square Meters</th>
-                <th>CR</th>
-                <th>Status</th>
-                <th>Parking</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($properties as $property)
-                <tr>
-                    <td>
-                        @php
-                            $imagePaths = explode(',', $property->img_path);
-                        @endphp
-                        @foreach($imagePaths as $imagePath)
-                            <img src="{{ asset($imagePath) }}" alt="Property Image" style="max-width: 100px;">
-                        @endforeach
-                    </td>
-                    <td>{{ $property->address }}</td>
-                    <td>{{ $property->price }}</td>
-                    <td>{{ $property->Description }}</td>
-                    <td>{{ $property->rooms }}</td>
-                    <td>{{ $property->sqm }}</td>
-                    <td>{{ $property->cr }}</td>
-                    <td>{{ $property->status }}</td>
-                    <td>{{ $property->parking }}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table> --}}
+    <div class="max-w-screen-xl flex flex-wrap items-center mx-auto p-4 ml-20">
+        @include('common.card')
+    </div>
 
     @include('common.footer')
 </body>

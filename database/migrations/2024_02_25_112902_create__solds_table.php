@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->unsignedBigInteger('customer_id');
             $table->unsignedBigInteger('property_id');
+            $table->string('payment_method');
 
             // FK
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');

@@ -17,7 +17,9 @@ class AgentController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $agentinfo = Agent::where('user_id', $user->id)->first();
+        if($user != NULL){
+            $agentinfo = Agent::where('user_id', $user->id)->first();
+        }
         $properties = Property::where('agent_id',$agentinfo->id)->get();
         return view('agent.index',compact('properties','agentinfo'));
     }
@@ -51,7 +53,7 @@ class AgentController extends Controller
         $agent->save();
         auth()->login($user);
 
-        return redirect()->route('login.loginpage')->with('success', 'Registration successful! Please log in.');
+        return redirect()->route('login.loginpage')->with('successregister', true);
     }
 
 }
