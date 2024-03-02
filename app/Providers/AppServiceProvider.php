@@ -46,9 +46,7 @@ class AppServiceProvider extends ServiceProvider
                     $role = 'admin';
                 }
                 
-                $view->with('currentuser', $currentUser);
-                $view->with('userdata', $userdata);
-                $view->with('userrole', $role);
+                $view->with(compact('currentUser', 'userdata', 'role'));
             }
         });
     }

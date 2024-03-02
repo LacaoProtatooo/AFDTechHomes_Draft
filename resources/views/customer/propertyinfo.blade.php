@@ -60,10 +60,8 @@
                 <p class="text-black md:text-2xl tracking-wider dark:text-gray-400">Property Area: {{$property->sqm}}</p><br>
                 <p class="text-black md:text-2xl tracking-wider dark:text-gray-400">Property Price: {{$property->price}}</p><br>
                 <p class="text-black md:text-2xl tracking-wider dark:text-gray-400">Property Address: {{$property->address}}</p><br>
-                <p class="text-black md:text-2xl tracking-wider dark:text-gray-400">Agent: {{$agentinfo->name}}</p><br>
+                <p class="text-black md:text-2xl tracking-wider dark:text-gray-400">Agent: {{$propertyagentinfo->name}}</p><br>
             </div>
-           
-              
         </div>
 
         <div class="items-center justify-center relative mb-5">

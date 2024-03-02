@@ -1,3 +1,16 @@
+<?php
+  use App\Models\Agent;
+  use App\Models\Customer;
+  use App\Models\Admin;
+
+  $currentUser = Auth::user();
+  if($currentUser){
+    $customerinfo = Customer::where('user_id', $currentUser->id)->first();
+    $agentinfo = Admin::where('user_id', $currentUser->id)->first();
+    $admininfo = Agent::where('user_id', $currentUser->id)->first();
+  }
+?>
+
 <nav class="bg-green-900 border-gray-200 dark:bg-gray-900">
 
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-0">
