@@ -33,6 +33,7 @@ class PropertyController extends Controller
         $propertyagentinfo = Agent::where('id', $property->agent_id)->first();
 
         return view('customer.propertyinfo', compact('property', 'propertyagentinfo'));
+
     }
 
     public function create(){

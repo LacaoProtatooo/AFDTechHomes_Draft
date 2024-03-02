@@ -34,6 +34,8 @@ use App\Http\Controllers\PropertyController;
 
 // Homepopulate
 Route::get('/', [PropertyController::class, 'homepopulate'])->name('home');
+// Property Info
+Route::get('/property/info', [PropertyController::class, 'propertyinfo'])->name('property.info');
 
 // LOGIN & LOGOUT
 Route::get('/login', [LoginController::class, 'loginpage'])->name('login.loginpage');
@@ -44,24 +46,32 @@ Route::match(['get', 'post'], '/logout', [LoginController::class, 'logout'])->na
 Route::get('/register/{role}', [LoginController::class, 'signup'])->name('signup.show');
 Route::post('/register/{role}', [LoginController::class, 'signupuser'])->name('signup.submit');
 
-Route::get('/agents', [AgentController::class, 'index'])->name('agent.home');
-Route::get('/customer', [CustomerController::class, 'index'])->name('customer.home');
-
-// Admin
-Route::get('/admin/dashboard', [Admincontroller::class, 'index'])->name('admin.dashboard');
-
 // Customer
-Route::get('/customer/dashboard', [CustomerController::class, 'index'])->name('customer.dashboard');
+Route::middleware('customer')->group(function () {
+    Route::get('/customer/dashboard', [CustomerController::class, 'index'])->name('customer.dashboard');
+
+});
 
 // Agent
-Route::get('/agent/dashboard', [AgentController::class, 'index'])->name('agent.dashboard');
+Route::middleware('agent')->group(function () {
+    Route::get('/agent/dashboard', [AgentController::class, 'index'])->name('agent.dashboard');
 
-// Property
-Route::get('/property/create', [PropertyController::class, 'create'])->name('property.create');
-Route::post('/property/store', [PropertyController::class, 'store'])->name('property.store');
-Route::get('/property/{id}/edit', [PropertyController::class, 'edit'])->name('property.edit');
-Route::post('/property/{id}/update', [PropertyController::class, 'update'])->name('property.update');
-Route::get('/property/{id}/delete', [PropertyController::class, 'delete'])->name('property.delete');
+    // Property
+    Route::get('/property/create', [PropertyController::class, 'create'])->name('property.create');
+    Route::post('/property/store', [PropertyController::class, 'store'])->name('property.store');
+    Route::get('/property/{id}/edit', [PropertyController::class, 'edit'])->name('property.edit');
+    Route::post('/property/{id}/update', [PropertyController::class, 'update'])->name('property.update');
+    Route::get('/property/{id}/delete', [PropertyController::class, 'delete'])->name('property.delete');
+});
 
-Route::get('/property/info', [PropertyController::class, 'propertyinfo'])->name('property.info');
+// Admin
+Route::middleware('admin')->group(function () {
+    Route::get('/admin/dashboard', [Admincontroller::class, 'index'])->name('admin.dashboard');
+
+});
+
+
+
+
+
 

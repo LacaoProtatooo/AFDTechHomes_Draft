@@ -47,4 +47,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // Middleware
+    public function isAgent()
+    {
+        return $this->role === 'agent'; // Assuming the user's role is stored in a 'role' attribute
+    }
 }
