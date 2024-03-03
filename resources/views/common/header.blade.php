@@ -6,8 +6,8 @@
   $currentUser = Auth::user();
   if($currentUser){
     $customerinfo = Customer::where('user_id', $currentUser->id)->first();
-    $agentinfo = Admin::where('user_id', $currentUser->id)->first();
-    $admininfo = Agent::where('user_id', $currentUser->id)->first();
+    $agentinfo = Agent::where('user_id', $currentUser->id)->first();
+    $admininfo = Admin::where('user_id', $currentUser->id)->first();
   }
 ?>
 
