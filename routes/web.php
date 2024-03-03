@@ -67,6 +67,8 @@ Route::middleware('agent')->group(function () {
 // Admin
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', [Admincontroller::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin/profile', [Admincontroller::class, 'adminprofile'])->name('admin.profile');
+    Route::post('/admin/update', [Admincontroller::class, 'update'])->name('admin.update');
 
 });
 
