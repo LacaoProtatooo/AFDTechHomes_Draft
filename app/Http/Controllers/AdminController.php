@@ -111,4 +111,30 @@ class AdminController extends Controller
 
         return redirect()->route('admin.dashboard');
     }
+
+    public function agents(){
+        $user = Auth::user();
+        $admininfo = Admin::where('user_id', $user->id)->first();
+
+        $solds = Solds::All();
+        $approval = Approval::All();
+        $properties = Property::All();
+        $agents = Agent::All();
+        $users = User::All();
+
+        return view('admin.agents', compact('properties','admininfo','solds','approval','agents','users'));
+    }
+
+    public function properties(){
+        $user = Auth::user();
+        $admininfo = Admin::where('user_id', $user->id)->first();
+
+        $solds = Solds::All();
+        $approval = Approval::All();
+        $properties = Property::All();
+        $agents = Agent::All();
+        $users = User::All();
+
+        return view('admin.properties', compact('properties','admininfo','solds','approval','agents','users'));
+    }
 }

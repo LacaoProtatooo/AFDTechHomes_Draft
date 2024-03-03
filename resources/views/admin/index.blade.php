@@ -109,7 +109,7 @@
       </div>
 
       <!-- Table -->
-      <div class="flex flex-col mt-6">
+      <div class="flex flex-col mt-6 ">
         <div class="overflow-x-auto rounded-lg">
           <div class="inline-block min-w-full align-middle">
             <div class="overflow-hidden shadow sm:rounded-lg">
@@ -142,7 +142,7 @@
 
                 <tbody class="bg-white dark:bg-gray-800">
                     @foreach ($properties as $property)
-                      <tr>
+                      <tr class="">
                         <td class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap dark:text-white">
                           <span class="font-semibold">{{$property->description}}</span>
                         </td>
