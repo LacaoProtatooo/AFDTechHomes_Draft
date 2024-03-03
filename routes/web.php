@@ -70,6 +70,9 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/profile', [Admincontroller::class, 'adminprofile'])->name('admin.profile');
     Route::post('/admin/update', [Admincontroller::class, 'update'])->name('admin.update');
 
+    Route::get('/admin/agents', [Admincontroller::class, 'agents'])->name('admin.agents');
+    Route::get('/admin/properties', [Admincontroller::class, 'properties'])->name('admin.properties');
+
 });
 
 

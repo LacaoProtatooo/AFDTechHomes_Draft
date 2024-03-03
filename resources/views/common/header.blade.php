@@ -108,11 +108,39 @@
         @endif
         class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Home</button>
         
-        <!--List-->
-        <button type="button" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">List</button>
+        <!--2ND BUTTON-->
+
+        @if (isset($customerinfo) && $customerinfo)
+        {{-- CUSTOMER VIEW APPOINTED SCHEDULES HERE (TO BE FIXED) --}}
+        <button type="button" onclick="location.href='{{route('login.loginpage')}}';" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Schedules</button>
+      
+        @elseif (isset($agentinfo) && $agentinfo)
+        {{-- AGENTS VIEW CUSTOMER APPOINTEE SCHEDULES HERE (TO BE FIXED)--}}
+        <button type="button" onclick="location.href='{{route('login.loginpage')}}';" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Customers</button>
+      
+        @elseif (isset($admininfo) && $admininfo)
+        {{-- ADMIN VIEW AGENTS HERE (TO BE FIXED)--}}
+        <button type="button" onclick="location.href='{{route('admin.agents')}}';" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Agents</button>
+      
+        @else
+        {{-- LOGIN --}}
+        <button type="button" onclick="location.href='{{route('logout')}}';"  class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Schedules</button>
         
-        <!--Property List-->
-        <button type="button" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Properties</button>    
+        @endif
+        
+         
+        <!--Property List 3RD BUTTON-->
+        <button type="button" 
+        @if (isset($customerinfo) && $customerinfo)
+          onclick="location.href='{{route('customer.dashboard')}}';" 
+        @elseif (isset($agentinfo) && $agentinfo)
+          onclick="location.href='{{route('agent.dashboard')}}';" 
+        @elseif (isset($admininfo) && $admininfo)
+          onclick="location.href='{{route('admin.properties')}}';" 
+        @else
+          onclick="location.href='{{route('logout')}}';" 
+        @endif
+        class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Properties</button>    
         
         @auth
         <!--LOGOUT-->
