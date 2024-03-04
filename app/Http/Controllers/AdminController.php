@@ -137,4 +137,20 @@ class AdminController extends Controller
 
         return view('admin.properties', compact('properties','admininfo','solds','approval','agents','users'));
     }
+
+    public function approve($id){
+        $approval = Approval::where('property_id', $id)->first();
+        $approval->status_of_approval = 'approved';
+        $approval->save();
+
+        return redirect()->route('admin.properties');
+    }
+
+    public function reject($id){
+        $approval = Approval::where('property_id', $id)->first();
+        $approval->status_of_approval = 'rejected';
+        $approval->save();
+
+        return redirect()->route('admin.properties');
+    }
 }

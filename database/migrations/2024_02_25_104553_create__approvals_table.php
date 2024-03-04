@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('admin_id');
             $table->unsignedBigInteger('property_id');
             $table->string('status_of_approval');
+            $table->timestamps(); 
     
             // FK
             $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
