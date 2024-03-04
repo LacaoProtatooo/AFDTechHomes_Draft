@@ -50,11 +50,17 @@ Route::post('/register/{role}', [LoginController::class, 'signupuser'])->name('s
 Route::middleware('customer')->group(function () {
     Route::get('/customer/dashboard', [CustomerController::class, 'index'])->name('customer.dashboard');
 
+    Route::get('/customer/profile', [CustomerController::class, 'customerprofile'])->name('customer.profile');
+    Route::post('/customer/update', [CustomerController::class, 'update'])->name('customer.update');
+
 });
 
 // Agent
 Route::middleware('agent')->group(function () {
     Route::get('/agent/dashboard', [AgentController::class, 'index'])->name('agent.dashboard');
+
+    Route::get('/agent/profile', [AgentController::class, 'agentprofile'])->name('agent.profile');
+    Route::post('/agent/update', [AgentController::class, 'update'])->name('agent.update');
 
     // Property
     Route::get('/property/create', [PropertyController::class, 'create'])->name('property.create');
@@ -62,6 +68,8 @@ Route::middleware('agent')->group(function () {
     Route::get('/property/{id}/edit', [PropertyController::class, 'edit'])->name('property.edit');
     Route::post('/property/{id}/update', [PropertyController::class, 'update'])->name('property.update');
     Route::get('/property/{id}/delete', [PropertyController::class, 'delete'])->name('property.delete');
+
+    
 });
 
 // Admin

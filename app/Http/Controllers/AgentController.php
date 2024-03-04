@@ -56,4 +56,44 @@ class AgentController extends Controller
         return redirect()->route('login.loginpage')->with('successregister', true);
     }
 
+    public function agentprofile(){
+        $user = auth()->user();
+        $agentinfo = Agent::where('user_id', $user->id)->first();
+        $userinfo = User::where('id', $agentinfo->user_id)->first();
+
+        return view('agent.agentprofile', compact('agentinfo','userinfo'));
+    }
+
+    public function update(Request $request){
+        $user = Auth::user();
+        $agentinfo = Agent::where('user_id', $user->id)->first();
+
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
+            'phone_number' => 'required|max:11',
+            'address' => 'required|string|max:255',
+        ]);
+
+        $agentinfo->name = $validatedData['name'];
+        $agentinfo->phone_number = $validatedData['phone_number'];
+        $agentinfo->address = $validatedData['address'];
+
+        $agentinfo->save();
+
+        $user->email = $validatedData['email'];
+
+        if(isset($request->new_password) && $request->new_password != NULL){
+            $this->validate($request, [
+                'new_password' => 'required|string|min:8',
+            ]);
+    
+            $user->password = Hash::make($request->new_password);
+        }
+
+        $user->save();
+
+        return redirect()->route('agent.dashboard');
+    }
+
 }

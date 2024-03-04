@@ -49,7 +49,7 @@
           $agentinfo = NULL;
           $admininfo = NULL;
         @endphp
-        <button type="button" onclick="" class="flex items-center justify-center text-white bg-gradient-to-br from-green-400 to-blue-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+        <button type="button" onclick="location.href='{{route('customer.profile')}}';" class="flex items-center justify-center text-white bg-gradient-to-br from-green-400 to-blue-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
           Welcome: {{ $customerinfo->name }}
           <span class="ml-1"></span>
           <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
@@ -62,7 +62,7 @@
           $customerinfo = NULL;
           $admininfo = NULL;
         @endphp
-        <button type="button" onclick="" class="flex items-center justify-center text-white bg-gradient-to-br from-green-400 to-blue-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+        <button type="button" onclick="location.href='{{route('agent.profile')}}';"  class="flex items-center justify-center text-white bg-gradient-to-br from-green-400 to-blue-600 hover:px-6 hover:py-3.5 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
           Agent: {{ $agentinfo->name }}
           <span class="ml-1"></span>
           <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">

@@ -18,8 +18,13 @@ class PropertyController extends Controller
         $propertyapproval = Approval::where('status_of_approval', 'approved')->get();
         $properties = [];
 
-        foreach($propertyapproval as $approved){
-            $properties = Property::where('id', $approved->property_id)->get();
+        $availableproperties = Property::where('status', 'available')->get();
+        foreach ($availableproperties as $availables) {
+            foreach ($propertyapproval as $approved) {
+                if ($approved->property_id == $availables->id) {
+                    $properties = Property::where('id', $approved->property_id)->get();
+                }
+            }
         }
 
         foreach ($properties as $property) {
