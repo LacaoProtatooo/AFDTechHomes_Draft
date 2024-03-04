@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Agent;
 use App\Models\Property;
 use App\Models\User;
+use App\Models\Approval;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +15,12 @@ use Redirect;
 class PropertyController extends Controller
 {
     public function homepopulate(){
-        $properties = Property::All();
+        $propertyapproval = Approval::where('status_of_approval', 'approved')->get();
+        $properties = [];
+
+        foreach($propertyapproval as $approved){
+            $properties = Property::where('id', $approved->property_id)->get();
+        }
 
         foreach ($properties as $property) {
             $agentinfo = Agent::where('id', $property->agent_id)->first();
@@ -83,6 +89,14 @@ class PropertyController extends Controller
         // Save the image paths in the database as a comma-separated string
         $property->image_path = implode(',', $imagePaths);
         $property->save();
+
+        $selectproperty = Property::where('description', $property->description)->first();
+
+        $approval = new Approval();
+        $approval->admin_id = 1;
+        $approval->property_id = $selectproperty->id;
+        $approval->status_of_approval = 'pending';
+        $approval->save();
 
         // Redirect back with a success message
         return redirect()->route('agent.dashboard')->with('successproperty', true);
